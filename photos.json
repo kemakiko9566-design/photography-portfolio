@@ -1,0 +1,52 @@
+{
+  "series": [
+    {
+      "id": "temple",
+      "title": "古建 · 香积寺",
+      "subtitle": "XIANGJI TEMPLE",
+      "description": "西安 · 香积寺系列 —— 屋瓦、飞檐、匾额与石狮，在树影和光线里慢慢看它们。海报式排版是这个系列的一体两面。",
+      "grid": "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3",
+      "photos": [
+        { "file": "01-xiangji-temple-poster.jpg", "title": "香积寺 · Xiangji Temple", "alt": "香积寺 · 飞檐与红柱（海报版）" },
+        { "file": "02-mahavira-hall.jpg", "title": "大雄宝殿 · Mahavira Hall", "alt": "大雄宝殿匾额与屋瓦" },
+        { "file": "03-xiangji-entrance.jpg", "title": "山门石狮", "alt": "香积寺山门与石狮" },
+        { "file": "04-bamboo-grove.jpg", "title": "竹径 · Bamboo Grove", "alt": "屋檐与竹林" },
+        { "file": "05-stone-lion.jpg", "title": "石狮 · Stone Lion", "alt": "庭院中的石狮" }
+      ]
+    },
+    {
+      "id": "double",
+      "title": "双重曝光 · 书法",
+      "subtitle": "DOUBLE EXPOSURE",
+      "description": "让石狮和书法叠在一起，用色彩给熟悉的楼阁换一种情绪 —— 实验性的拍法。",
+      "grid": "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3",
+      "photos": [
+        { "file": "07-calligraphy-lions-dark.jpg", "title": "石狮与书法（暗调）", "alt": "石狮与书法双重曝光（暗调）" },
+        { "file": "08-calligraphy-lions-light.jpg", "title": "石狮与书法（亮调）", "alt": "石狮与书法双重曝光（亮调）" },
+        { "file": "09-orange-pavilion.jpg", "title": "楼阁与书法 · 双色", "alt": "橙色天空下的楼阁与书法叠加" }
+      ]
+    },
+    {
+      "id": "street",
+      "title": "人文 · 街拍",
+      "subtitle": "STREET & LIFE",
+      "description": "旷野、咖啡馆 —— 取景框里的日常。",
+      "grid": "grid-cols-1 sm:grid-cols-2",
+      "photos": [
+        { "file": "06-field-bw.jpg", "title": "旷野 · 黑白", "alt": "旷野上奔跑的人（黑白）" },
+        { "file": "12-coffee-shop.jpg", "title": "咖啡店 · 日常光影", "alt": "咖啡馆吧台与店员" }
+      ]
+    },
+    {
+      "id": "sculpture",
+      "title": "展览 · 雕塑",
+      "subtitle": "EXHIBITION",
+      "description": "展厅里的红色，与被色彩重构的塑像。",
+      "grid": "grid-cols-1 sm:grid-cols-2",
+      "photos": [
+        { "file": "10-houyi-statue.jpg", "title": "塑 · 红蓝双色", "alt": "红蓝双色的雕塑与古建筑" },
+        { "file": "11-red-sculptures.jpg", "title": "展 · 红色雕塑", "alt": "展厅中的红色雕塑" }
+      ]
+    }
+  ]
+}

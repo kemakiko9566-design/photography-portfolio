@@ -12,31 +12,24 @@
   <link rel="icon" type="image/x-icon" href="dist/assets/favicon.ico" />
   <link rel="stylesheet" href="dist/output.css" />
   <link rel="stylesheet" href="styles.css" />
-  <!-- Alpine.js -->
+  <!-- Alpine.js（移动端菜单） -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  <!-- Start - Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Signika:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap"
-    rel="stylesheet">
-  <!-- End - Fonts -->
-  <!-- Start - Fancybox Scripts -->
+  <!-- Start - Fancybox 灯箱 -->
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
-  <script src="https://code.jquery.com/jquery-3.6.3.min.js"
-    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-  <!-- End - Fancybox Scripts -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- End - Fancybox -->
+  <!-- Tailwind（自托管，国内访问快） -->
+  <script src="dist/tailwindcdn.js"></script>
   <script>
     tailwind.config = {
       content: ["./dist/*.{html,js}"],
       theme: {
-        extend:
-                {
-                  fontFamily: {
-                    'signika': ['Signika', 'Noto Sans SC', 'sans-serif'],
-                  },
-                },
+        extend: {
+          fontFamily: {
+            'signika': ['Signika', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', 'sans-serif'],
+            'nothingyoucoulddo': ['Nothing You Could Do', 'Segoe Script', 'Brush Script MT', 'cursive'],
+          },
+        },
       },
       plugins: [],
     }
@@ -113,7 +106,7 @@
         class="text-sm px-4 py-1.5 rounded-full border border-gray-300 dark:border-neutral-700 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition duration-300">展览 · 雕塑</a>
     </div>
 
-    <!-- ============ 系列 1 · 古建 香积寺 ============ -->
+    <!-- ============ 系列 · 古建 · 香积寺 ============ -->
     <section id="series-temple" class="pb-16 scroll-mt-8">
       <div class="flex items-baseline gap-3 mb-1">
         <h2 class="text-2xl font-bold">古建 · 香积寺</h2>
@@ -124,7 +117,7 @@
 
         <figure class="group relative overflow-hidden">
           <a href="dist/assets/photos/01-xiangji-temple-poster.jpg" data-fancybox="temple"
-            data-caption="香积寺 · Xiangji Temple — 西安">
+            data-caption="香积寺 · Xiangji Temple">
             <img alt="香积寺 · 飞檐与红柱（海报版）"
               class="block w-full object-cover object-center transition duration-500 transform scale-100 hover:scale-105"
               src="dist/assets/photos/01-xiangji-temple-poster.jpg" />
@@ -150,7 +143,7 @@
 
         <figure class="group relative overflow-hidden">
           <a href="dist/assets/photos/03-xiangji-entrance.jpg" data-fancybox="temple"
-            data-caption="山门石狮 · 香积寺">
+            data-caption="山门石狮">
             <img alt="香积寺山门与石狮"
               class="block w-full object-cover object-center transition duration-500 transform scale-100 hover:scale-105"
               src="dist/assets/photos/03-xiangji-entrance.jpg" />
@@ -186,11 +179,10 @@
             <span class="text-white text-sm">石狮 · Stone Lion</span>
           </figcaption>
         </figure>
-
       </div>
     </section>
 
-    <!-- ============ 系列 2 · 双重曝光 ============ -->
+    <!-- ============ 系列 · 双重曝光 · 书法 ============ -->
     <section id="series-double" class="pb-16 scroll-mt-8">
       <div class="flex items-baseline gap-3 mb-1">
         <h2 class="text-2xl font-bold">双重曝光 · 书法</h2>
@@ -201,7 +193,7 @@
 
         <figure class="group relative overflow-hidden">
           <a href="dist/assets/photos/07-calligraphy-lions-dark.jpg" data-fancybox="double"
-            data-caption="石狮与书法 · 双重曝光（暗调）">
+            data-caption="石狮与书法（暗调）">
             <img alt="石狮与书法双重曝光（暗调）"
               class="block w-full object-cover object-center transition duration-500 transform scale-100 hover:scale-105"
               src="dist/assets/photos/07-calligraphy-lions-dark.jpg" />
@@ -214,7 +206,7 @@
 
         <figure class="group relative overflow-hidden">
           <a href="dist/assets/photos/08-calligraphy-lions-light.jpg" data-fancybox="double"
-            data-caption="石狮与书法 · 双重曝光（亮调）">
+            data-caption="石狮与书法（亮调）">
             <img alt="石狮与书法双重曝光（亮调）"
               class="block w-full object-cover object-center transition duration-500 transform scale-100 hover:scale-105"
               src="dist/assets/photos/08-calligraphy-lions-light.jpg" />
@@ -227,7 +219,7 @@
 
         <figure class="group relative overflow-hidden">
           <a href="dist/assets/photos/09-orange-pavilion.jpg" data-fancybox="double"
-            data-caption="楼阁与书法 · 双色滤镜">
+            data-caption="楼阁与书法 · 双色">
             <img alt="橙色天空下的楼阁与书法叠加"
               class="block w-full object-cover object-center transition duration-500 transform scale-100 hover:scale-105"
               src="dist/assets/photos/09-orange-pavilion.jpg" />
@@ -237,22 +229,21 @@
             <span class="text-white text-sm">楼阁与书法 · 双色</span>
           </figcaption>
         </figure>
-
       </div>
     </section>
 
-    <!-- ============ 系列 3 · 人文 街拍 ============ -->
+    <!-- ============ 系列 · 人文 · 街拍 ============ -->
     <section id="series-street" class="pb-16 scroll-mt-8">
       <div class="flex items-baseline gap-3 mb-1">
         <h2 class="text-2xl font-bold">人文 · 街拍</h2>
-        <span class="text-sm text-gray-500 dark:text-gray-400">STREET & LIFE</span>
+        <span class="text-sm text-gray-500 dark:text-gray-400">STREET &amp; LIFE</span>
       </div>
       <p class="text-gray-600 dark:text-gray-300 mb-6">旷野、咖啡馆 —— 取景框里的日常。</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
         <figure class="group relative overflow-hidden">
           <a href="dist/assets/photos/06-field-bw.jpg" data-fancybox="street"
-            data-caption="旷野 — 黑白">
+            data-caption="旷野 · 黑白">
             <img alt="旷野上奔跑的人（黑白）"
               class="block w-full object-cover object-center transition duration-500 transform scale-100 hover:scale-105"
               src="dist/assets/photos/06-field-bw.jpg" />
@@ -275,11 +266,10 @@
             <span class="text-white text-sm">咖啡店 · 日常光影</span>
           </figcaption>
         </figure>
-
       </div>
     </section>
 
-    <!-- ============ 系列 4 · 展览 雕塑 ============ -->
+    <!-- ============ 系列 · 展览 · 雕塑 ============ -->
     <section id="series-sculpture" class="pb-16 scroll-mt-8">
       <div class="flex items-baseline gap-3 mb-1">
         <h2 class="text-2xl font-bold">展览 · 雕塑</h2>
@@ -313,10 +303,8 @@
             <span class="text-white text-sm">展 · 红色雕塑</span>
           </figcaption>
         </figure>
-
       </div>
     </section>
-
   </div>
   <!-- Footer -->
   <footer>

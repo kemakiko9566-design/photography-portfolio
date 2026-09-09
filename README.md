@@ -1,184 +1,49 @@
-<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
+# KEMA · 摄影作品集
 
-<a name="readme-top"></a>
+纯静态摄影展示站（HTML + Tailwind + Fancybox 灯箱），部署在 GitHub Pages。
+线上地址：<https://kemakiko9566-design.github.io/photography-portfolio/>
 
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
+## 目录结构
 
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-<!-- PROJECT LOGO -->
-<br />
-<div align="center">
-  <a href="https://github.com/JoaoFranco03/photography-portfolio">
-    <img src="dist/assets/Logo.jpg" alt="Logo" width="80" height="80">
-  </a>
-
-  <h3 align="center">Photography Portfolio</h3>
-
-  <p align="center">
-    A Website created using Tailwind CSS, HTML, CSS <br /> and JavaScript that can be used as a Photography Portfolio.
-    <br />
-    <br />
-    <a href="https://photography-portfolio-joaofranco03.netlify.app/">View Demo</a>
-    <br />
-    <br />
-    
-  </p>
-</div>
-
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li><a href="#about-the-project">About The Project</a></li>
-    <li>
-      <a href="#built-with">Built With</a>
-      <ul>
-        <li><a href="#html-badge">HTML</a></li>
-        <li><a href="#css-badge">CSS</a></li>
-        <li><a href="#js-badge">JavaScript</a></li>
-        <li><a href="#tailwind-badge">Tailwind CSS</a></li>
-      </ul>
-    </li>
-    <li><a href="#quick-start">Quick Start</a></li>
-    <li><a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
-
-<!-- ABOUT THE PROJECT -->
-
-# 📋 About The Project <a name="about-the-project"></a>
-
-[![Product Name Screen Shot][product-screenshot]](https://github.com/JoaoFranco03/photography-portfolio)
-
-This project is a web-based portfolio that beautifully showcases the photography work of Sophia Williams, a fictional photographer. The portfolio was skillfully built using a combination of powerful front-end technologies, including Tailwind CSS, CSS, HTML, and JavaScript.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## 🛠️ Built With <a name="built-with"></a>
-
-- [![HTML][html-badge]][html-url]
-- [![CSS][css-badge]][css-url]
-- [![JavaScript][js-badge]][js-url]
-- [![Tailwind][tailwind-badge]][tailwind-url]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## 🚀 Quick Start <a name="quick-start"></a>
-
-Create your own page with one click on [Netlify](https://app.netlify.com/signup):
-
-[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/JoaoFranco03/photography-portfolio)
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## 🎯 Getting Started <a name="getting-started"></a>
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-### 🏗️ Installation <a name="installation"></a>
-
-1. Clone the repo
-
-```sh
- git clone https://github.com/JoaoFranco03/photography-portfolio/.git
+```
+photography-portfolio/
+├── index.html            ← 首页（由脚本生成，不要手改！）
+├── photos.json           ← 照片清单（加照片改这里）
+├── build_gallery.py      ← 生成脚本（读 photos.json → 产出 index.html）
+├── dist/
+│   ├── about_me.html     ← 关于页（手写页面）
+│   ├── contact.html      ← 联系页（手写页面）
+│   ├── tailwindcdn.js    ← Tailwind 自托管脚本
+│   ├── output.css        ← 模板预编译样式
+│   └── assets/photos/    ← 全部照片
+└── src/input.css         ← Tailwind 源文件（改样式才需要动）
 ```
 
-2.  Run the following command:
+## 如何加一张照片（3 步）
 
-```sh
- npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
-```
-3.  Run the Project in a Server
+1. 把图片放进 `dist/assets/photos/`，命名建议 `系列缩写-描述.jpg`（如 `temple-sunset.jpg`）。
+2. 打开 `photos.json`，在对应系列的 `photos` 数组里加一行：
+   ```json
+   { "file": "temple-sunset.jpg", "title": "夕照", "alt": "香积寺夕照" }
+   ```
+   - 想新建一个系列：复制现有某个 series 块，改 `id`/`title`/`description` 即可，顶部导航自动生成。
+   - 数组内的顺序 = 页面显示顺序，调换位置即可排序。
+3. 运行生成脚本，然后推送：
+   ```
+   python build_gallery.py
+   git add -A && git commit -m "add photo" && git push
+   ```
 
-4.  Change it with your own photos, about me and contact info.
+脚本会自动校验：photos.json 里引用了但目录里不存在的文件会打警告。
 
-5.  Publish it using your preferred hosting platform.
+## 如何改样式
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+- 布局/内容：改 `build_gallery.py` 里的模板常量（PAGE_HEAD / SECTION / FIGURE），重新运行生成。
+- 颜色/间距微调：改 `src/input.css` 后需要重新编译 Tailwind（进阶，不常用）；或直接改 `dist/output.css`。
+- 关于页/联系页是手写页面，直接编辑 `dist/about_me.html`、`dist/contact.html`。
 
-<!-- Ko-fi -->
+## 技术说明
 
-## ☕ Support Me on Ko-fi
-
-If you find this project useful, consider supporting me on Ko-fi. Thanks for checking it out!  
-
-<a href="https://ko-fi.com/joaofranco03" target="_blank">
-    <img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="Support me on Ko-fi" style="height:40px;">
-</a>
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LICENSE -->
-
-## 📜 License <a name="license"></a>
-
-Distributed under the GPL-3.0 License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTACT -->
-
-## 📧 Contact <a name="contact"></a>
-
-João Franco - https://www.linkedin.com/in/joão-franco-452161195/
-
-Project Link: [https://github.com/JoaoFranco03/photography-portfolio/](https://github.com/JoaoFranco03/photography-portfolio/)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- ACKNOWLEDGMENTS -->
-
-## 🌟 Acknowledgments <a name="acknowledgments"></a>
-
-- [FancyBox](https://fancyapps.com/fancybox/)
-- [Unsplash](https://unsplash.com/)
-- [Tailwind Documentation](https://tailwindcss.com/docs/installation)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[tailwind-badge]: https://img.shields.io/badge/Tailwind_CSS-62BAF3?style=for-the-badge&logo=tailwind-css&logoColor=white
-[tailwind-url]: https://tailwindcss.com
-[html-badge]: https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white
-[html-url]: https://developer.mozilla.org/en-US/docs/Web/HTML
-[css-badge]: https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white
-[css-url]: https://developer.mozilla.org/en-US/docs/Web/CSS
-[js-badge]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
-[js-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
-[license-url]: https://github.com/JoaoFranco03/photography-portfolio/blob/main/LICENSE.md
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://www.linkedin.com/in/joão-franco-452161195/
-[product-screenshot]: dist/assets/mockup.png
+- Tailwind 已自托管（`dist/tailwindcdn.js`），不依赖 cdn.tailwindcss.com；字体走系统栈，无 Google Fonts 依赖 → 国内访问无墙外资源。
+- Fancybox（灯箱）与 Alpine.js（移动端菜单）来自 jsdelivr CDN，如需完全离线可再自托管。
+- 模板基于 [JoaoFranco03/photography-portfolio](https://github.com/JoaoFranco03/photography-portfolio)（GPL-3.0）修改。
