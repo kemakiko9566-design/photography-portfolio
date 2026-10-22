@@ -47,6 +47,31 @@
         { "file": "10-houyi-statue.jpg", "title": "塑 · 红蓝双色", "alt": "红蓝双色的雕塑与古建筑" },
         { "file": "11-red-sculptures.jpg", "title": "展 · 红色雕塑", "alt": "展厅中的红色雕塑" }
       ]
+    },
+    {
+      "id": "crow",
+      "title": "乌鸦 · 黑白",
+      "subtitle": "CROWS IN B&W",
+      "description": "围栏、护墩与天光 —— 黑白里的一群乌鸦，安静地占了整条海岸线。",
+      "grid": "grid-cols-1 sm:grid-cols-2",
+      "photos": [
+        { "file": "crow-01-fence-shadow.jpg", "title": "栏杆与影 · Crow & Shadows", "alt": "乌鸦停在网格围栏顶，背景是百叶般的光影" },
+        { "file": "crow-02-cloudy-perch.jpg", "title": "孤鸦 · Lone Crow", "alt": "阴天云下，乌鸦立在围栏柱顶" },
+        { "file": "crow-03-seawall-group.jpg", "title": "海堤七鸦 · Seven Crows", "alt": "海边护墩上站着一排乌鸦，背后是港湾" },
+        { "file": "crow-04-fence-line.jpg", "title": "围栏两端 · Fence Line", "alt": "铁丝网围栏延伸向远方，两只乌鸦立于其上" }
+      ]
+    },
+    {
+      "id": "night",
+      "title": "夜滩 · 猫与船",
+      "subtitle": "AFTER DARK",
+      "description": "手电筒、蓝调时刻和沙滩上的猫 —— 夜里海边散步的随手记录。",
+      "grid": "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3",
+      "photos": [
+        { "file": "night-01-cat-flashlight.jpg", "title": "夜巡 · Night Patrol", "alt": "手电光下，一只花斑小猫走在沙滩上" },
+        { "file": "night-02-blue-hour-boat.jpg", "title": "蓝调孤舟 · Blue Hour", "alt": "暮色蓝调中停在平静海面上的孤船" },
+        { "file": "night-03-cat-village.jpg", "title": "望海 · Watching the Sea", "alt": "夜色中坐在沙滩上望向远处渔村灯火的猫" }
+      ]
     }
   ]
 }
